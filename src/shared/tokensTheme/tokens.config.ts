@@ -1,7 +1,8 @@
 import StyleDictionary from 'style-dictionary';
-import { spacing, radius, duration, zIndex } from './tokens';
-import { lightTheme } from './light';
+
 import { darkTheme } from './dark';
+import { lightTheme } from './light';
+import { duration, radius, spacing, zIndex } from './tokens';
 import type { ThemeTokens } from './types';
 
 const themes: Array<{ name: string; tokens: ThemeTokens }> = [
