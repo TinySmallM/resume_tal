@@ -10,6 +10,7 @@
     "lint": "eslint",
     "lint:css": "stylelint \"**/*.css\"",
     "lint:fix": "lint-staged",
+    "lint:all": "eslint --fix \"**/*.{ts,tsx,js,mjs}\" --ignore-pattern node_modules --ignore-pattern .next --ignore-pattern generated",
     "prepare": "husky"
   },
   "lint-staged": {

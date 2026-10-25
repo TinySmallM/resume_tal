@@ -26,6 +26,8 @@ const eslintConfig = defineConfig([
       
       "sort-imports": "off",
       "import/order": "off",
+
+      "eol-last": ["error", "always"],
     },
   },
 ]);
