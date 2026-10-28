@@ -1,10 +1,8 @@
 .page {
   --background: #fafafa;
   --foreground: #fff;
-
   --text-primary: #000;
   --text-secondary: #666;
-
   --button-primary-hover: #383838;
   --button-secondary-hover: #f2f2f2;
   --button-secondary-border: #ebebeb;
@@ -12,8 +10,8 @@
   display: flex;
   flex: 1;
   flex-direction: column;
-  align-items: center;
   justify-content: center;
+  align-items: center;
   font-family: var(--font-geist-sans);
   background-color: var(--background);
 }
@@ -21,21 +19,21 @@
 .main {
   display: flex;
   flex: 1;
+  flex-direction: column;
+  justify-content: space-between;
+  align-items: flex-start;
   width: 100%;
   max-width: 800px;
-  flex-direction: column;
-  align-items: flex-start;
-  justify-content: space-between;
-  background-color: var(--foreground);
   padding: 120px 60px;
+  background-color: var(--foreground);
 }
 
 .intro {
   display: flex;
   flex-direction: column;
   align-items: flex-start;
-  text-align: left;
   gap: 24px;
+  text-align: left;
 }
 
 .intro h1 {
@@ -64,9 +62,9 @@
 .ctas {
   display: flex;
   flex-direction: row;
+  gap: 16px;
   width: 100%;
   max-width: 440px;
-  gap: 16px;
   font-size: 14px;
 }
 
@@ -74,20 +72,20 @@
   display: flex;
   justify-content: center;
   align-items: center;
+  width: fit-content;
   height: 40px;
   padding: 0 16px;
-  border-radius: 128px;
+  font-weight: 500;
   border: 1px solid transparent;
+  border-radius: 128px;
   transition: 0.2s;
   cursor: pointer;
-  width: fit-content;
-  font-weight: 500;
 }
 
 a.primary {
-  background: var(--text-primary);
-  color: var(--background);
   gap: 8px;
+  color: var(--background);
+  background: var(--text-primary);
 }
 
 a.secondary {
@@ -107,7 +105,7 @@ a.secondary {
   }
 }
 
-@media (max-width: 600px) {
+@media (width <= 600px) {
   .main {
     padding: 48px 24px;
   }
@@ -131,10 +129,8 @@ a.secondary {
   .page {
     --background: #000;
     --foreground: #000;
-
     --text-primary: #ededed;
     --text-secondary: #999;
-
     --button-primary-hover: #ccc;
     --button-secondary-hover: #1a1a1a;
     --button-secondary-border: #1a1a1a;
@@ -142,9 +138,9 @@ a.secondary {
 }
 
 .code {
+  padding: 0.1em 0.4em;
   font-family: var(--font-geist-mono);
   font-size: 0.9em;
-  background: color-mix(in srgb, currentColor 8%, transparent);
-  padding: 0.1em 0.4em;
+  background: color-mix(in srgb, currentcolor 8%, transparent);
   border-radius: 6px;
 }
