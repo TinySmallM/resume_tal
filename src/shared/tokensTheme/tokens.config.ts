@@ -2,7 +2,7 @@ import StyleDictionary from 'style-dictionary';
 
 import { darkTheme } from './dark';
 import { lightTheme } from './light';
-import { duration, radius, spacing, zIndex } from './tokens';
+import { duration, radius, size,spacing, zIndex } from './tokens';
 import type { ThemeTokens } from './types';
 
 const themes: Array<{ name: string; tokens: ThemeTokens }> = [
@@ -16,6 +16,7 @@ async function generateTokens() {
       tokens: {
         color: tokens.color,
         shadow: tokens.shadow,
+        size: size,
         space: spacing,
         radius: radius,
         duration: duration,
@@ -30,7 +31,7 @@ async function generateTokens() {
             format: 'css/variables',
             options: {
               outputReferences: false,
-              selector: `.theme-${name}`,
+              selector: `[data-theme="${name}"]`,
             },
           }],
         },

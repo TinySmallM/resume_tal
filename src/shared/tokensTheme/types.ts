@@ -7,11 +7,9 @@ export interface ThemeColors {
   bgAccent:    { value: string };
 
   // Текст
-  fg:          { value: string };
-  fgSecondary: { value: string };
-  fgTertiary:  { value: string };
-  fgInverse:   { value: string };
-
+  text:          { value: string };
+  textHover:     { value: string };
+  
   // Бордеры
   border:      { value: string };
   borderStrong:{ value: string };

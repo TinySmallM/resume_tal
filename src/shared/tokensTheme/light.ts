@@ -7,10 +7,8 @@ export const lightTheme: ThemeTokens = {
     bgTertiary:  { value: '#e5e7eb' },
     bgAccent:    { value: '#f5f3ff' },
 
-    fg:          { value: '#18181b' },
-    fgSecondary: { value: '#52525b' },
-    fgTertiary:  { value: '#71717a' },
-    fgInverse:   { value: '#ffffff' },
+    text:        { value: '#18181b' },
+    textHover:   { value: '#52525b' },
 
     border:      { value: '#e5e7eb' },
     borderStrong:{ value: '#d4d4d8' },

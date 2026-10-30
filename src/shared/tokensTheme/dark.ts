@@ -7,10 +7,8 @@ export const darkTheme: ThemeTokens = {
     bgTertiary:  { value: '#3f3f46' },
     bgAccent:    { value: 'rgba(124, 58, 237, 0.1)' },
 
-    fg:          { value: '#fafafa' },
-    fgSecondary: { value: '#a1a1aa' },
-    fgTertiary:  { value: '#71717a' },
-    fgInverse:   { value: '#18181b' },
+    text:        { value: '#18181b' },
+    textHover:   { value: '#52525b' },
 
     border:      { value: '#3f3f46' },
     borderStrong:{ value: '#52525b' },

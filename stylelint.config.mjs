@@ -28,7 +28,7 @@ const stylelintConfig = {
     ],
 
     //camelCase
-    "selector-class-pattern": "^[a-z][a-zA-Z0-9]*$",
+    "selector-class-pattern": "^[a-z][a-zA-Z0-9-]*$",
 
     "no-descending-specificity": null,
 

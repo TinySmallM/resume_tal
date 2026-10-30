@@ -19,6 +19,10 @@ export const radius = {
   full: { value: '100%' },
 };
 
+export const size = {
+  full: { value: '100%' },
+};
+
 export const duration = {
   fast:   { value: '150ms' },
   normal: { value: '250ms' },

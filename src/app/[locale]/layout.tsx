@@ -1,6 +1,6 @@
 import "../globals.css";
-import "@/app/generated/tokens/css/dark.css";
-import "@/app/generated/tokens/css/light.css";
+import "../generated/tokens/css/light.css";
+import "../generated/tokens/css/dark.css";
 
 import { Geist, Geist_Mono } from "next/font/google";
 import { NextIntlClientProvider } from 'next-intl';
@@ -24,7 +24,7 @@ export default async function LocaleLayout({
   const messages = await getMessages();
 
   return (
-    <html lang={locale} className={`${geistSans.variable} ${geistMono.variable}`}>
+    <html lang={locale} className={`${geistSans.variable} ${geistMono.variable}`} data-theme="light">
       <body>
         <NextIntlClientProvider messages={messages}>
           {children}
