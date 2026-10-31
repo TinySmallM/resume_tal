@@ -8,15 +8,16 @@ export const lightTheme: ThemeTokens = {
     bgAccent:    { value: '#f5f3ff' },
 
     text:        { value: '#18181b' },
+    textTertiary: {value: '#71717a'},
     textHover:   { value: '#52525b' },
 
     border:      { value: '#e5e7eb' },
     borderStrong:{ value: '#d4d4d8' },
 
     accent:      { value: '#7c3aed' },
+    accentTo:    { value: '#d946ef' },
     accentHover: { value: '#6d28d9' },
     accentSoft:  { value: '#f5f3ff' },
-    accentFg:    { value: '#6d28d9' },
 
     success:     { value: '#10b981' },
     successBg:   { value: '#ecfdf5' },

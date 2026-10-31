@@ -8,15 +8,16 @@ export const darkTheme: ThemeTokens = {
     bgAccent:    { value: 'rgba(124, 58, 237, 0.1)' },
 
     text:        { value: '#18181b' },
+    textTertiary: {value: '#71717a'},
     textHover:   { value: '#52525b' },
 
     border:      { value: '#3f3f46' },
     borderStrong:{ value: '#52525b' },
 
-    accent:      { value: '#a78bfa' },
+    accent:      { value: '#8b5cf6' },
+    accentTo:    { value: '#ec4899' },
     accentHover: { value: '#c4b5fd' },
     accentSoft:  { value: 'rgba(167, 139, 250, 0.1)' },
-    accentFg:    { value: '#c4b5fd' },
 
     success:     { value: '#34d399' },
     successBg:   { value: 'rgba(52, 211, 153, 0.1)' },

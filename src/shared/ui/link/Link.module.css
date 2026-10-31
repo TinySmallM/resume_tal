@@ -1,5 +1,6 @@
 .link {
-  width: var(--size-full);
+  display: inline-flex;
+  padding: 0 10px;
   font-weight: 400;
   text-decoration: none;
   transition: color 0.2s ease, opacity 0.2s ease;
@@ -28,16 +29,4 @@
 
 .link-accent {
   font-weight: 600;
-}
-
-.position-left {
-  text-align: left;
-}
-
-.position-center {
-  text-align: center;
-}
-
-.position-right {
-  text-align: right;
 }

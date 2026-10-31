@@ -12,12 +12,13 @@ export interface AnimatedEffectProps {
   delay?: number;
   once?: boolean;
   amount?: number;
+  wide?: boolean;
   className?: string;
 }
 
 const variants: Record<Direction, Variants> = {
   up: {
-    hidden: { opacity: 0, y: 60 },
+    hidden: { opacity: 0, y: 20 },
     visible: { opacity: 1, y: 0 },
   },
   down: {
@@ -42,17 +43,19 @@ const variants: Record<Direction, Variants> = {
   },
 };
 
-export function AnimatedEffect({
+export const AnimatedEffect = ({
   children,
   direction = 'up',
   duration = 0.5,
   delay = 0,
   once = true,
   amount = 0.3,
+  wide = true,
   className,
-}: AnimatedEffectProps) {
+}: AnimatedEffectProps) => {
   return (
     <motion.div
+      style={{ width: wide ? '100%' : 'auto' }}
       variants={variants[direction]}
       initial="hidden"
       whileInView="visible"
@@ -67,4 +70,4 @@ export function AnimatedEffect({
       {children}
     </motion.div>
   );
-}
+};
