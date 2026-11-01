@@ -1,8 +1,8 @@
 .link {
-  width: var(--size-full);
+  display: inline-flex;
+  padding: 0 10px;
   font-weight: 400;
   text-decoration: none;
-  transition: color 0.2s ease, opacity 0.2s ease;
   cursor: pointer;
 }
 
@@ -17,7 +17,9 @@
 }
 
 .link-primary {
+  font-size: var(--size-sm);
   color: var(--color-text);
+  transition: color var(--duration-fast) ease, opacity var(--duration-fast) ease;
 }
 
 .link-muted {
@@ -26,18 +28,34 @@
   text-underline-offset: 2px;
 }
 
+.link-gradient {
+  display: inline-flex;
+  justify-content: center;
+  align-items: center;
+  min-height: 15px;
+  padding: 12px 24px;
+  font-size: var(--size-sm);
+  font-weight: 600;
+  color: var(--color-accent-soft);
+  text-decoration: none;
+  background: linear-gradient(
+    to right,
+    var(--color-accent),
+    var(--color-accent-to)
+  );
+  border-radius: var(--radius-md);
+  transition: all var(--duration-fast) ease;
+}
+
+.link-gradient:hover {
+  box-shadow: var(--shadow-md);
+}
+
+.link-gradient:focus-visible {
+  outline: 2px solid var(--color-accent);
+  outline-offset: 2px;
+}
+
 .link-accent {
   font-weight: 600;
-}
-
-.position-left {
-  text-align: left;
-}
-
-.position-center {
-  text-align: center;
-}
-
-.position-right {
-  text-align: right;
 }

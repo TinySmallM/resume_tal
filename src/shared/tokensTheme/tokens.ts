@@ -20,7 +20,18 @@ export const radius = {
 };
 
 export const size = {
-  full: { value: '100%' },
+  xs:    { value: '0.5rem' },
+  sm:    { value: '0.8rem' },
+  md:    { value: '1rem' },
+
+  lg:    { value: '1.2rem' },
+  llg:   { value: '1.6rem' },
+
+  xl:    { value: '2.2rem'},
+  xxl:   { value: '2.6rem'},
+  xxxl:  { value: '3.5rem'},
+
+  full:  { value: '100%' },
 };
 
 export const duration = {

@@ -4,12 +4,10 @@ import type { ComponentPropsWithoutRef, ReactNode } from 'react';
 
 import styles from './Link.module.css';
 
-type Variant = 'primary' | 'muted' | 'accent';
-type Pos = 'left' | 'center' | 'right';
+type Variant = 'primary' | 'muted' | 'accent' | 'gradient';
 
-interface LinkProps extends Omit<ComponentPropsWithoutRef<typeof NextLink>, 'href' | 'className'> {
+interface Props extends Omit<ComponentPropsWithoutRef<typeof NextLink>, 'href' | 'className'> {
   href: string;
-  position?: Pos
   variant?: Variant;
   className?: string;
   children: ReactNode;
@@ -20,7 +18,6 @@ interface LinkProps extends Omit<ComponentPropsWithoutRef<typeof NextLink>, 'hre
 
 export const Link = ({
   href,
-  position = 'left',
   variant = 'primary',
   children,
   className,
@@ -28,13 +25,12 @@ export const Link = ({
   rel,
   isAccent,
   ...props
-}: LinkProps) => {
+}: Props) => {
   const isExternal = href.startsWith('http') || href.startsWith('mailto:');
 
   const classes = clsx(
     styles.link,
     styles[`link-${variant}`],
-    styles[`position-${position}`],
     isAccent && styles['link-accent'],
     className
   );

@@ -9,6 +9,7 @@ export interface ThemeColors {
   // Текст
   text:          { value: string };
   textHover:     { value: string };
+  textTertiary:  { value: string };   
   
   // Бордеры
   border:      { value: string };
@@ -16,9 +17,9 @@ export interface ThemeColors {
 
   // Акцент
   accent:      { value: string };
+  accentTo:    { value: string };
   accentHover: { value: string };
   accentSoft:  { value: string };
-  accentFg:    { value: string };
 
   // Статусы
   success:     { value: string };
