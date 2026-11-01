@@ -1,11 +1,13 @@
 import clsx from 'clsx';
-import type { ComponentPropsWithoutRef, ReactNode } from 'react';
+import type { ComponentPropsWithoutRef, ElementType,ReactNode } from 'react';
 
 import styles from './Paragraph.module.css';
 
 type Size = 'xs' | 'sm' | 'md' | 'lg' | 'xl';
+type Tag = 'p' | 'span';
 
-interface ParagraphProps extends Omit<ComponentPropsWithoutRef<'p'>, 'className'> {
+interface Props extends Omit<ComponentPropsWithoutRef<'p'>, 'className'> {
+  as?: Tag;
   size?: Size;
   accent?: boolean;
   className?: string;
@@ -13,12 +15,15 @@ interface ParagraphProps extends Omit<ComponentPropsWithoutRef<'p'>, 'className'
 }
 
 export const Paragraph = ({
+  as,
   size = 'md',
   accent = false,
   children,
   className,
   ...props
-}: ParagraphProps) => {
+}: Props) => {
+  const Tag: ElementType = as ?? 'p';
+
   const classes = clsx(
     styles.paragraph,
     styles[`size-${size}`],
@@ -27,8 +32,8 @@ export const Paragraph = ({
   );
 
   return (
-    <p className={classes} {...props}>
+    <Tag className={classes} {...props}>
       {children}
-    </p>
+    </Tag>
   );
 };

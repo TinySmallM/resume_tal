@@ -31,7 +31,8 @@
     "radix-ui": "^1.8.1",
     "react": "19.3.0",
     "react-dom": "19.3.0",
-    "reset-css": "^5.0.2"
+    "reset-css": "^5.0.2",
+    "yet-another-react-lightbox": "^3.33.0"
   },
   "devDependencies": {
     "@commitlint/cli": "^21.2.4",

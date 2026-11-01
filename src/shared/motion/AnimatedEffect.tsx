@@ -50,7 +50,7 @@ export const AnimatedEffect = ({
   delay = 0,
   once = true,
   amount = 0.3,
-  wide = true,
+  wide = false,
   className,
 }: AnimatedEffectProps) => {
   return (

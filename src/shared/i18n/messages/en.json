@@ -2,6 +2,8 @@
   "Home": {
     "cv": "CV — Sergey Mangushev Frontend Developer", 
     "title": "With an emphasis on rigorous engineering standards and assembly automation",
-    "description": "I design the architecture of client-side applications and develop responsive interfaces. I have actively used Git for team-based development, working with branches and pull requests."
+    "description": "I design the architecture of client-side applications and develop responsive interfaces. I have actively used Git for team-based development, working with branches and pull requests.",
+    "github": "Get GitHub",
+    "github_since": "Exists since {date} year."
   }
 }
