@@ -1,4 +1,6 @@
+import type { Metadata } from 'next';
 import { useTranslations } from "next-intl";
+import { getLocale, getTranslations } from 'next-intl/server';
 
 import resumeImg from '@/assets/image/resume.jpg';
 import { useFormattedDate } from "@/shared/hooks/useFormattedDate";
@@ -9,6 +11,37 @@ import { Paragraph } from "@/shared/ui/paragraph/Paragraph";
 import { CV_HREF, GITHUB_CREATE_AT, GITHUB_HREF } from "../constants";
 import { ResumeGallery } from "../widgets/ResumeGallery/ResumeGallery";
 import styles from "./page.module.css";
+
+
+export async function generateMetadata(): Promise<Metadata> {
+  const locale = await getLocale();
+  const t = await getTranslations('Home');
+  
+  const baseUrl = process.env.NEXT_PUBLIC_SITE_URL || 'http://localhost:3000';
+
+  return {
+    title: t('title'),
+    description: t('description'),
+    openGraph: {
+      type: 'website',
+      url: `${baseUrl}/${locale}`,
+      locale: locale === 'ru' ? 'ru_RU' : 'en_US',
+      title: t('title'),
+      description: t('description'),
+      siteName: t('site_name'),
+      images: [{ url: `${baseUrl}/intro.png`, width: 1200, height: 630, alt: t('title') }],
+    },
+    twitter: {
+      // card: 'summary_large_image',
+      title: t('title'),
+      description: t('description'),
+      images: [`${baseUrl}/intro.png`],
+    },
+    alternates: {
+      languages: { ru: '/ru', en: '/en' },
+    },
+  };
+}
 
 export default function Home() {
   const t = useTranslations('Home');
