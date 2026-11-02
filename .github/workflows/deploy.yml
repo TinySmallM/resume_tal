@@ -1,21 +1,40 @@
 name: CD — Deploy to Vercel
 
-# Запускается только после успешного завершения CI workflow
 on:
-  workflow_run:
-    workflows: ["CI — Code Quality"]
-    types: [completed]
-    branches: [main]
+  push:
+    tags:
+      - 'v*'
 
 jobs:
   deploy:
     name: Deploy to Vercel
     runs-on: ubuntu-latest
-    # Деплоим только если CI прошёл успешно
-    if: ${{ github.event.workflow_run.conclusion == 'success' }}
-
     steps:
-      - uses: actions/checkout@v4
+      - name: Checkout code
+        uses: actions/checkout@v4
+
+      - name: Setup Node.js
+        uses: actions/setup-node@v4
+        with:
+          node-version: 22
+          cache: 'yarn'
+
+      - name: Install dependencies
+        run: yarn install --frozen-lockfile
+
+      - name: Run linter
+        run: yarn lint
+
+      - name: Run CSS linter
+        run: yarn lint:css
+
+      - name: Run tests
+        run: yarn test:run
+
+      - name: Build
+        run: yarn build
+        env:
+          NEXT_PUBLIC_SITE_URL: ${{ secrets.NEXT_PUBLIC_SITE_URL }}
 
       - name: Deploy to Vercel
         run: npx vercel deploy --prod --token=${{ secrets.VERCEL_TOKEN }}
