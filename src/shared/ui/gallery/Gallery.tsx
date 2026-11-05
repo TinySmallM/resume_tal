@@ -1,15 +1,12 @@
 import clsx from 'clsx';
-import type { StaticImageData } from 'next/image';
-import Image from 'next/image';
+import NextImage from 'next/image';
 import type { ReactNode } from 'react';
+
+import type { NextImageType } from '@/app/types';
 
 import styles from './Gallery.module.css';
 
-interface Props {
-  src: string | StaticImageData;
-  alt: string;
-  width: number;
-  height: number;
+export interface Props extends Omit<NextImageType, ''> {
   className?: string;
   onClick?: () => void;
   children?: ReactNode;
@@ -31,7 +28,7 @@ export const Gallery = ({
         className={clsx(styles.trigger, className)}
         onClick={onClick}
       >
-      <Image
+      <NextImage
         src={src}
         alt={alt}
         width={width}

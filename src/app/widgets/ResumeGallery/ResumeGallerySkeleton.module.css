@@ -1,0 +1,68 @@
+.resume_skeleton {
+  --shadow-rest: 0 12px 32px rgb(124 58 237 / 35%);
+
+  display: flex;
+  justify-content: center;
+  padding: 0 var(--space-4);
+  padding-top: var(--space-8);
+}
+
+.resume_card {
+  position: relative;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  gap: var(--space-6);
+  width: 230px;
+  padding: var(--space-4);
+  background: linear-gradient(
+    135deg,
+    var(--color-bg-accent) 0%,
+    var(--color-bg) 50%,
+    var(--color-accent-soft) 100%
+  );
+  border: 2px dashed var(--color-text-tertiary);
+  border-radius: var(--radius-xl);
+  aspect-ratio: 1 / 1.8;
+  overflow: hidden;
+}
+
+.icon_wrapper {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  width: 100px;
+  height: 100px;
+  color: var(--color-bg);
+  background: linear-gradient(
+    135deg,
+    var(--color-accent) 0%,
+    var(--color-accent-to) 100%
+  );
+  border-radius: var(--radius-full);
+  box-shadow: var(--shadow-rest);
+  animation: pulse var(--duration-slow) ease-in-out infinite;
+}
+
+@keyframes pulse {
+  0%, 100% {
+    transform: scale(1);
+  }
+
+  50% {
+    transform: scale(0.95);
+  }
+}
+
+@media (width >= 768px) {
+  .resume_card {
+    width: 400px;
+    aspect-ratio: 1 / 1.4;
+  }
+
+  .icon_wrapper {
+    width: 120px;
+    height: 120px;
+  }
+}

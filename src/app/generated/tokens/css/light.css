@@ -51,7 +51,7 @@
   --radius-full: 100%;
   --duration-fast: 150ms;
   --duration-normal: 250ms;
-  --duration-slow: 400ms;
+  --duration-slow: 800ms;
   --z-index-base: 0;
   --z-index-dropdown: 100;
   --z-index-sticky: 200;

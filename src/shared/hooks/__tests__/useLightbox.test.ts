@@ -1,18 +1,18 @@
 import { act,renderHook } from '@testing-library/react';
 import { describe, expect, it, vi } from 'vitest';
 
-import type { GalleryImage } from '@/shared/lib/lightbox';
+import { NextImageType } from '@/app/types';
 
 import { useLightbox } from '../useLightbox';
 
 // Мокаем toLightboxSlides
 vi.mock('@/shared/lib/lightbox', () => ({
-  toLightboxSlides: vi.fn((images: GalleryImage[]) => 
+  toLightboxSlides: vi.fn((images: NextImageType[]) => 
     images.map(img => ({ src: img.src, width: img.width, height: img.height, alt: img.alt }))
   ),
 }));
 
-const mockImages: GalleryImage[] = [
+const mockImages: NextImageType[] = [
   { src: 'image1.jpg', alt: 'Image 1', width: 800, height: 600 },
   { src: 'image2.jpg', alt: 'Image 2', width: 800, height: 600 },
 ];
@@ -23,15 +23,15 @@ describe('useLightbox', () => {
 
     expect(result.current.isOpen).toBe(false);
     expect(result.current.isEmpty).toBe(true);
-    expect(result.current.previewImage).toBeNull();
-    expect(result.current.slides).toEqual([]);
+    expect(result.current.previewLightboxImage).toBeNull();
+    expect(result.current.lightboxImages).toEqual([]);
   });
 
-  it('должен возвращать первое изображение как previewImage', () => {
+  it('должен возвращать первое изображение как previewLightboxImage', () => {
     const { result } = renderHook(() => useLightbox(mockImages));
 
     expect(result.current.isEmpty).toBe(false);
-    expect(result.current.previewImage).toEqual(mockImages[0]);
+    expect(result.current.previewLightboxImage).toEqual(mockImages[0]);
   });
 
   it('должен открывать и закрывать лайтбокс', () => {
@@ -55,10 +55,10 @@ describe('useLightbox', () => {
   it('должен мемоизировать slides (не пересчитывать при том же массиве)', () => {
     const { result, rerender } = renderHook(() => useLightbox(mockImages));
     
-    const firstSlides = result.current.slides;
+    const firstSlides = result.current.lightboxImages;
     
     rerender();
     
-    expect(result.current.slides).toBe(firstSlides);
+    expect(result.current.lightboxImages).toBe(firstSlides);
   });
 });
