@@ -2,13 +2,12 @@ import type { Metadata } from 'next';
 import { useTranslations } from "next-intl";
 import { getLocale, getTranslations } from 'next-intl/server';
 
-import resumeImg from '@/assets/image/resume.jpg';
 import { useFormattedDate } from "@/shared/hooks/useFormattedDate";
 import { AnimatedEffect } from "@/shared/motion";
 import { Link } from "@/shared/ui/link/Link";
 import { Paragraph } from "@/shared/ui/paragraph/Paragraph";
 
-import { CV_HREF, GITHUB_CREATE_AT, GITHUB_HREF } from "../constants";
+import { CV_HREF, GITHUB_CREATE_AT, GITHUB_HREF, RESUME_GALLERY } from "../constants";
 import { ResumeGallery } from "../widgets/ResumeGallery/ResumeGallery";
 import styles from "./page.module.css";
 
@@ -76,9 +75,7 @@ export default function Home() {
             </AnimatedEffect>
             <AnimatedEffect direction="scale" delay={0.4} className={styles.intro_animated}>
               <ResumeGallery
-                slides={[
-                  { src: resumeImg, alt: 'Резюме', width: 1200, height: 800 },
-                ]}
+                images={RESUME_GALLERY}
               />
             </AnimatedEffect>
           </div>

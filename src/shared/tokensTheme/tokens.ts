@@ -37,7 +37,7 @@ export const size = {
 export const duration = {
   fast:   { value: '150ms' },
   normal: { value: '250ms' },
-  slow:   { value: '400ms' },
+  slow:   { value: '800ms' },
 };
 
 export const zIndex = {
