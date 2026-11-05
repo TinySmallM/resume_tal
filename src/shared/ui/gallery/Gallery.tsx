@@ -7,12 +7,14 @@ import type { NextImageType } from '@/app/types';
 import styles from './Gallery.module.css';
 
 export interface Props extends Omit<NextImageType, ''> {
+  type?: 'next' | 'native';
   className?: string;
   onClick?: () => void;
   children?: ReactNode;
 }
 
 export const Gallery = ({
+  type = 'next',
   src,
   alt,
   width,
@@ -33,8 +35,9 @@ export const Gallery = ({
         alt={alt}
         width={width}
         height={height}
+        unoptimized={type === 'next' ? true : false}
         className={styles.image}
-        loading="eager"
+        loading={type === 'next' ? 'eager' : 'lazy'}
       />
         <div className={styles.gradientOverlay}>
           {children && <span className={styles.hintText}>{children}</span>}
