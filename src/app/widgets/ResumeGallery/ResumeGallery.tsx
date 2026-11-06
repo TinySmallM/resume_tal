@@ -28,6 +28,7 @@ export const ResumeGallery = ({ images }: Props) => {
 
   return (
     <Gallery
+      type="native"
       className={styles.resume_gallery}
       src={previewLightboxImage.src}
       alt={previewLightboxImage.alt}
@@ -42,13 +43,13 @@ export const ResumeGallery = ({ images }: Props) => {
         plugins={[Zoom, Thumbnails]}
           thumbnails={{
             position: 'bottom',
-            width: 80,        // ← ширина миниатюры
-            height: 60,       // ← высота миниатюры
-            gap: 8,           // ← отступ между миниатюрами
-            border: 2,        // ← рамка активной миниатюры
-            borderRadius: 4,  // ← скругление
-            padding: 2,       // ← внутренний отступ
-            imageFit: 'cover', // ← как изображение заполняет миниатюру
+            width: 80,        
+            height: 60,       
+            gap: 8,          
+            border: 2,        
+            borderRadius: 4, 
+            padding: 2,      
+            imageFit: 'cover',
           }}
         zoom={{
           maxZoomPixelRatio: 5,
